@@ -1,0 +1,24 @@
+First, I create a circuit table that holds 2000 circuits. 
+
+Each circuit object contains a qualifying score array, name and lineup of jugglers.
+
+Jugglers contain their name,current circuit score, skillset, their favorites in an array, 
+their score for their favorites in an an array and a kick score.
+
+First, i read all the circuits and store their properties in the circuit_table root;
+Then, I read the jugglers and add them to the circuit table. 
+
+So, first the program tries to add the juggler to its favorite. If the juggler's favorite is full,
+the juggler sees if they are better than the worst on that circuit
+if so, kick the worst and add the juggler.
+if not kick the juggler(tell them to look at next fave)
+if kicked, depending on your kick score, you choose your next circuit. Everytime a juggler
+ gets kicked, their kick score goes up, and they go through another addjuggler() call.
+ kick score is used to pick which favorite circuit the juggler is looking at
+ i.e if kickscore is 0, they are on their 1st fave, if kickscore is 9, they are on their 10th fave
+if juggler has been kicked from all their favorites, the juggler must find either the first
+empty circuit that is not a fave, and if no empties, the first circuit they can kick someone out off.
+remember, kicks only happen if the juggler is better than the worst on that circuit.
+
+once all the jugglers have been settled into a circuit, 
+the program prints all the circuits lineup, with each juggler giving their name and favorites and scores for said favorites.
